@@ -1,0 +1,338 @@
+Jeu d'essais de la SAE 1.01 d'Alexis Feron et Clément Laporte
+
+// ------------------- vente.txt(avant jeu d'essais) ------------------- //
+
+1	101	12	25.50	306.00
+1	99	10	20.00	200.00
+2	101	10	25.50	255.00
+3	2	1	15.99	15.99
+3	24	5	14.75	73.75
+
+
+
+
+
+// ------------------- stock.txt(avant jeu d'essais) ------------------- //
+
+101	Mini_sapin	30	25.50	10
+99	100_boules	50	20.00	15
+2	Etoile_de_noël	13	15.99	10
+24	Guirlande	100	14.75	50
+
+
+
+
+
+// ------------------- 1ère partie des Essais ------------------- //
+
+alferon@iutclinfb1813l:/home/etud/alferon/SAE/Algo$ make
+gcc stock.c -c
+gcc stock.o testStock.o -o exoStock
+alferon@iutclinfb1813l:/home/etud/alferon/SAE/Algo$ ./exoStock 
+
+----------------------------------------------------
+Menu :	1 - Affichage du stock
+	2 - Traiter une commande (réalise un devis)
+	3 - Produits en risque de rupture
+	4 - Récapitulatif des ventes
+	5 - Faire un approvisionnement
+
+	0 - QUITTER
+
+Choix : 6
+----------------------------------------------------
+
+Choix inconnu
+
+----------------------------------------------------
+Menu :	1 - Affichage du stock
+	2 - Traiter une commande (réalise un devis)
+	3 - Produits en risque de rupture
+	4 - Récapitulatif des ventes
+	5 - Faire un approvisionnement
+
+	0 - QUITTER
+
+Choix : 1
+----------------------------------------------------
+
+Références	Nom		Quantité	Prix unitaire	Seuil de sécurité
+101		Mini_sapin	30		25.50		10
+99		100_boules	50		20.00		15
+2		Etoile_de_noël	13		15.99		10
+24		Guirlande	100		14.75		50
+
+----------------------------------------------------
+Menu :	1 - Affichage du stock
+	2 - Traiter une commande (réalise un devis)
+	3 - Produits en risque de rupture
+	4 - Récapitulatif des ventes
+	5 - Faire un approvisionnement
+
+	0 - QUITTER
+
+Choix : 2
+----------------------------------------------------
+
+Numéro du produit : 8
+Erreur, n° de produit incorrect, retaper : 101
+Quantité: 899
+Erreur, quantité incorrect, retaper: 5
+Ajouter d'autres produits (0=oui 1=non): 0
+
+Numéro du produit : 2
+Quantité: 1
+Ajouter d'autres produits (0=oui 1=non): 1
+
+********************
+
+DEVIS :
+
+Produits	Quantité	Prix	Prix total
+101		5		25.50€	127.50€
+2		1		15.99€	15.99€
+
+Prix total :				143.49€
+
+********************
+
+Voulez vous passer la commande ? (0=oui/1=non):0
+
+La commande a bien été effectuée
+Bonne nouvelle, aucun produit en risque de rupture
+
+----------------------------------------------------
+Menu :	1 - Affichage du stock
+	2 - Traiter une commande (réalise un devis)
+	3 - Produits en risque de rupture
+	4 - Récapitulatif des ventes
+	5 - Faire un approvisionnement
+
+	0 - QUITTER
+
+Choix : 2
+----------------------------------------------------
+
+Numéro du produit : 101
+Quantité: 1
+Ajouter d'autres produits (0=oui 1=non): 1
+
+********************
+
+DEVIS :
+
+Produits	Quantité	Prix	Prix total
+101		1		25.50€	25.50€
+
+Prix total :				25.50€
+
+********************
+
+Voulez vous passer la commande ? (0=oui/1=non):1
+
+La commande a été annulée
+
+----------------------------------------------------
+Menu :	1 - Affichage du stock
+	2 - Traiter une commande (réalise un devis)
+	3 - Produits en risque de rupture
+	4 - Récapitulatif des ventes
+	5 - Faire un approvisionnement
+
+	0 - QUITTER
+
+Choix : 3
+----------------------------------------------------
+
+Bonne nouvelle, aucun produit en risque de rupture
+
+----------------------------------------------------
+Menu :	1 - Affichage du stock
+	2 - Traiter une commande (réalise un devis)
+	3 - Produits en risque de rupture
+	4 - Récapitulatif des ventes
+	5 - Faire un approvisionnement
+
+	0 - QUITTER
+
+Choix : 4
+----------------------------------------------------
+
+N° de commande	 Référence du produit	 Quantité	 Prix unitaire	 Total
+1		 101			 12		 25.50		 306.00
+1		 99			 10		 20.00		 200.00
+
+Total:									 506.00
+********************
+N° de commande	 Référence du produit	 Quantité	 Prix unitaire	 Total
+2		 101			 10		 25.50		 255.00
+
+Total:									 255.00
+********************
+N° de commande	 Référence du produit	 Quantité	 Prix unitaire	 Total
+3		 2			 1		 15.99		 15.99
+3		 24			 5		 14.75		 73.75
+
+Total:									 89.74
+********************
+N° de commande	 Référence du produit	 Quantité	 Prix unitaire	 Total
+4		 101			 5		 25.50		 127.50
+4		 2			 1		 15.99		 15.99
+
+Total:									 143.49
+
+----------------------------------------------------
+Menu :	1 - Affichage du stock
+	2 - Traiter une commande (réalise un devis)
+	3 - Produits en risque de rupture
+	4 - Récapitulatif des ventes
+	5 - Faire un approvisionnement
+
+	0 - QUITTER
+
+Choix : 5
+----------------------------------------------------
+
+Numéro du produit : 101
+Quantité: 5
+
+********************
+
+Le produit existe déjà
+Le stock a donc été mis à jour (vous avez ajoutez 5 produits au stock)
+Le stock du produit n°101 est donc dorénavant de 30 produits
+
+----------------------------------------------------
+Menu :	1 - Affichage du stock
+	2 - Traiter une commande (réalise un devis)
+	3 - Produits en risque de rupture
+	4 - Récapitulatif des ventes
+	5 - Faire un approvisionnement
+
+	0 - QUITTER
+
+Choix : 5
+----------------------------------------------------
+
+Numéro du produit : 4
+Quantité: 4
+Nom du produit (mettre des underscores'_' à la place des espaces): lampe_led
+Prix unitaire du produit: 15.25
+Seuil de sécurité: 10
+
+********************
+
+Le produit n'existe pas et a donc été ajouté à notre stock :
+N° produit: 4
+Nom lampe_led
+Quantité 4
+Prix unitaire: 15.25
+Seuil de sécurité: 10
+
+----------------------------------------------------
+Menu :	1 - Affichage du stock
+	2 - Traiter une commande (réalise un devis)
+	3 - Produits en risque de rupture
+	4 - Récapitulatif des ventes
+	5 - Faire un approvisionnement
+
+	0 - QUITTER
+
+Choix : 0
+----------------------------------------------------
+
+
+
+
+
+// ------------------- vente.txt(après 1ère partie du jeu d'essais) ------------------- //
+
+1	101	12	25.50	306.00
+1	99	10	20.00	200.00
+2	101	10	25.50	255.00
+3	2	1	15.99	15.99
+3	24	5	14.75	73.75
+4	101	5	25.50	127.50
+4	2	1	15.99	15.99
+
+
+
+
+
+// ------------------- stock.txt(après 1ère partie du jeu d'essais) ------------------- //
+
+101	Mini_sapin	30	25.50	10
+99	100_boules	50	20.00	15
+2	Etoile_de_noël	12	15.99	10
+24	Guirlande	100	14.75	50
+4	lampe_led	4	15.25	10
+
+
+
+
+
+// ------------------- stock.txt(après modification pour la 2ème partie du jeu d'essais) ------------------- //
+
+101	Mini_sapin	3	25.50	10
+99	100_boules	50	20.00	15
+2	Etoile_de_noël	13	15.99	10
+24	Guirlande	100	14.75	50
+
+
+
+
+
+// ------------------- 2ème partie des Essais ------------------- //
+
+alferon@iutclinfb1813l:/home/etud/alferon/SAE/Algo$ ./exoStock 
+
+----------------------------------------------------
+Menu :	1 - Affichage du stock
+	2 - Traiter une commande (réalise un devis)
+	3 - Produits en risque de rupture
+	4 - Récapitulatif des ventes
+	5 - Faire un approvisionnement
+
+	0 - QUITTER
+
+Choix : 3
+----------------------------------------------------
+
+Attention, le produit n°101 est en risque de rupture (3 en stock sur 10 produits minimums)
+
+----------------------------------------------------
+Menu :	1 - Affichage du stock
+	2 - Traiter une commande (réalise un devis)
+	3 - Produits en risque de rupture
+	4 - Récapitulatif des ventes
+	5 - Faire un approvisionnement
+
+	0 - QUITTER
+
+Choix : 0
+----------------------------------------------------
+
+
+
+
+
+// ------------------- vente.txt(après jeu d'essais) ------------------- //
+
+1	101	12	25.50	306.00
+1	99	10	20.00	200.00
+2	101	10	25.50	255.00
+3	2	1	15.99	15.99
+3	24	5	14.75	73.75
+4	101	5	25.50	127.50
+4	2	1	15.99	15.99
+
+
+
+
+
+// ------------------- stock.txt(après jeu d'essais) ------------------- //
+
+101	Mini_sapin	3	25.50	10
+99	100_boules	50	20.00	15
+2	Etoile_de_noël	13	15.99	10
+24	Guirlande	100	14.75	50
